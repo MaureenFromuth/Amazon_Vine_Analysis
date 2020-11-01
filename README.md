@@ -114,7 +114,7 @@ Finally, we loaded these four new DataFrames into PgAdmin with four new tables f
 
 ## Results
 
-Using the resulting analysis from our ETL process, we are able to begin answering Jennifer’s question of whether or not a user is more likely to provide a 5-star rating if they are a paid or an unpaid vine user.  Jennifer’s overall question was broken down into three sub-questions, which required additional transformation on the initial vine_filter_help DataFrame above.
+Using the resulting analysis from our ETL process, we are able to begin answering Jennifer’s question of whether or not a user is more likely to provide a 5-star rating if they are a paid or an unpaid vine user.  Jennifer’s overall question was broken down into three sub-questions, which required additional transformation on the initial vine_filter_help DataFrame above.   To answer these sub-questions, we continued our analysis within PySpark.  
 
 
 ***1. How Many Vine Reviews and Non-Vine Reviews Were There?***
@@ -180,3 +180,8 @@ percent_five_unpaid = percent_unpaid.filter(percent_unpaid.star_rating == '5')
  
 ![Percent Five-Star Reviews](https://github.com/MaureenFromuth/Amazon_Vine_Analysis/blob/main/percent_five_total.png)
  
+
+
+## Summary
+
+Overall, the data identifies a bias towards 5-star reviews for unpaid users rather than paid users.  Of particular note, the percentage of overall reviews from paid users is relatively low (49: 151,400 or .03%).  Although there is a 2.5x difference between the two percentage (18 vs 52), it would be ideal to look at more than one product review category.  As a recommended follow-on analysis, we should look at 3-4 additional product review types from Amazon’s publicly available data set, and compare them to validate if this trend is an outlier or if represents the greater population.  More specifically, we could use the a two-sample t-test to identify is two product types are statistically similar or not.  
